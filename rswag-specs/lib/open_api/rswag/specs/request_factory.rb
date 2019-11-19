@@ -89,7 +89,7 @@ module OpenApi
           when :pipes
             "#{name}=#{value.join('|')}"
           when :multi
-            value.map { |v| "#{name}=#{v}" }.join('&')
+            value.map { |v| "#{name}[]=#{v}" }.join('&')
           else
             "#{name}=#{value.join(',')}" # csv is default
           end
