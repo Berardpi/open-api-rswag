@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{lib}/**/*"] + [ "MIT-LICENSE" ]
 
-  s.add_dependency 'open_api-rswag-specs', ENV['TRAVIS_TAG'] || '0.0.0'
-  s.add_dependency 'open_api-rswag-api', ENV['TRAVIS_TAG'] || '0.0.0'
-  s.add_dependency 'open_api-rswag-ui', ENV['TRAVIS_TAG'] || '0.0.0'
+  s.add_dependency 'open_api-rswag-specs', '0.0.0'
+  s.add_dependency 'open_api-rswag-api', '0.0.0'
+  s.add_dependency 'open_api-rswag-ui', '0.0.0'
 end
