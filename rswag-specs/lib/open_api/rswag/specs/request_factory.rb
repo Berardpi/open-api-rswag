@@ -79,6 +79,7 @@ module OpenApi
 
         def build_query_string_part(param, value)
           name = param[:name]
+          return {name => value}.to_param if param[:type].to_sym == :hash
           return "#{name}=#{value}" unless param[:type].to_sym == :array
 
           case param[:collectionFormat]
