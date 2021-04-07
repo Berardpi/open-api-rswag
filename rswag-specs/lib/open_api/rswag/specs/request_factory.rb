@@ -72,7 +72,11 @@ module OpenApi
 
             parameters.select { |p| p[:in] == :query }.each_with_index do |p, i|
               template.concat(i == 0 ? '?' : '&')
-              template.concat(build_query_string_part(p, example.send(p[:name])))
+              begin
+                template.concat(build_query_string_part(p, example.send(p[:name])))
+              rescue ArgumentError => e
+                raise e unless p[:name].to_s == "options"
+              end
             end
           end
         end
